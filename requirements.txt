@@ -18,6 +18,9 @@ langchain-huggingface
 transformers
 huggingface-hub
 
+# OpenRouter Integration
+langchain-openrouter
+
 # Environment Variable Management
 python-dotenv
 
