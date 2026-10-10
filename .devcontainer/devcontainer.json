@@ -1,0 +1,13 @@
+
+{
+  "name": "Learning-Langchain",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv312/bin/python",
+        "python.terminal.useEnvFile": true
+      }
+    }
+  }
+}
