@@ -8,6 +8,6 @@ llm = ChatOpenRouter(
     temperature = 0
 )
 
-result = llm.invoke("How old was Gandhi ji when he died?")
+result = llm.invoke("How old was Gandhi ji when he died? and What were his qualifications?")
 
 print(result.content)
