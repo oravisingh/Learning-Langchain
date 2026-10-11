@@ -1,6 +1,9 @@
 
 {
   "name": "Learning-Langchain",
+  "containerEnv": {
+    "HF_HOME": "${containerWorkspaceFolder}/.cache/huggingface"
+  },
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {

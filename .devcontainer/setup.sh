@@ -17,6 +17,7 @@ fi
 if [ ! -x .venv312/bin/python ]; then
     uv venv --python 3.12 .venv312
 fi
+uv pip install --python .venv312/bin/python torch --index-url https://download.pytorch.org/whl/cpu
 uv pip install --python .venv312/bin/python -r requirements.txt
 
 echo "Environment setup complete!"
