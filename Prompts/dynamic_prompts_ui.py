@@ -10,18 +10,21 @@ load_dotenv()
 st.set_page_config(page_title="Research Tool", page_icon="📚")
 st.header("Research Tool")
 
-with st.form("research_tool_form"):
-    paper_title = st.text_input("Enter the paper title")
-    style = st.selectbox("Select the style", ["Summarize", "Detailed Description", "Key-Points"])
-    length = st.selectbox("Select the desired length", ["short", "medium", "long"])
-    submitted = st.form_submit_button("Generate")
+paper_title = st.text_input("Enter the paper title")
+style = st.selectbox("Select the style", ["Summarize", "Detailed Description", "Key-Points"])
+length = st.selectbox("Select the desired length", ["short", "medium", "long"])
 
-if not submitted:
-    st.info("Enter a paper title and click Generate to create a research summary.")
-    st.stop()
 
 if not paper_title.strip():
     st.warning("Please enter a paper title before generating the response.")
+    st.stop()
+
+if not style:
+    st.warning("Please select a style before generating the response.")
+    st.stop()
+
+if not length:
+    st.warning("Please select a length before generating the response.")
     st.stop()
 
 
@@ -38,6 +41,10 @@ template = PromptTemplate(
         Keep the response {length} in length.
         Focus on the main ideas, significance, methods, and key takeaways.
         Present it in clear, professional English.
+        1.Mathemaitcal Formula:
+            -Use the mathematical formula(if any) as well to explain in a simple manner.
+        2.Analogy:
+            -Use analogy to explain the concept in a simple manner. 
         """,
         )
 
@@ -48,6 +55,7 @@ prompt = template.invoke({
 })
 
 with st.spinner("Generating result..."):
-    result = model.invoke(prompt)
+    if st.button("Generate"):
+        result = model.invoke(prompt)
+        st.write(result.content)
 
-st.write(result.content)
