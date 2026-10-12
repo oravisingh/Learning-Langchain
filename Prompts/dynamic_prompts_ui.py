@@ -11,7 +11,7 @@ st.set_page_config(page_title="Research Tool", page_icon="📚")
 st.header("Research Tool")
 
 paper_title = st.text_input("Enter the paper title")
-style = st.selectbox("Select the style", ["Summarize", "Detailed Description", "Key-Points"])
+style = st.selectbox("Select the style", ["Summary", "Detailed Description", "Key-Points"])
 length = st.selectbox("Select the desired length", ["short", "medium", "long"])
 
 
