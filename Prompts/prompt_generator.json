@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "length",
+        "paper_title",
+        "style"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\n        You are a research assistant.\n        Write a {style} of the paper titled \"{paper_title}\".\n        Keep the response {length} in length.\n        Focus on the main ideas, significance, methods, and key takeaways.\n        Present it in clear, professional English.\n        1.Mathemaitcal Formula:\n            -Use the mathematical formula(if any) as well to explain in a simple manner.\n        2.Analogy:\n            -Use analogy to explain the concept in a simple manner. \n        ",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}

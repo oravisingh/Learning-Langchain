@@ -46,13 +46,17 @@ template = PromptTemplate(
         2.Analogy:
             -Use analogy to explain the concept in a simple manner. 
         """,
-        )
+    validate_template=True, # Used to validate the template and ensure that all required input variables are provided.
 
+    )
+    
 prompt = template.invoke({
     "paper_title": paper_title,
     "style": style,
     "length": length,
 })
+
+# We could also use f string instead of PromptTemplate, but using PromptTemplate enables: 1. Default Validation 2. Reusable 3. LangChain Ecosysetm and 4. More Structured Approach and allows for better management of input variables.
 
 with st.spinner("Generating result..."):
     if st.button("Generate"):
