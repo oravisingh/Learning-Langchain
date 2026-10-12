@@ -27,9 +27,10 @@ document = [
 
 query1 = "Who was the first Black president of South Africa?"
 query2 = "BlackWhole is no way possible without the theory of relativity."
+query3 = "who did abolish slavery in the United States?"
 
 document_vector = embeddings.embed_documents(document)
-query_vector = np.array([embeddings.embed_query(query2)])
+query_vector = np.array([embeddings.embed_query(query3)])
 
 cosine_similarities = cosine_similarity(query_vector, document_vector)
 print("Cosine Similarities:", cosine_similarities)
