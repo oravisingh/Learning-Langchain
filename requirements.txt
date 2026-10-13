@@ -28,6 +28,9 @@ langchain-openrouter
 # Environment Variable Management
 python-dotenv
 
+# Data validation
+pydantic[email]
+
 # Machine Learning Utilities
 numpy
 scikit-learn
