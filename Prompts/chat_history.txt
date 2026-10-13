@@ -1,2 +1,18 @@
-HumanMessage(content="I want to request a refund for my order #12345.")
-AIMessage(content="Your refund request for order #12345 has been initiated. It will be processed in 3-5 business days.")
+[
+	{
+		"type": "human",
+		"data": {
+			"content": "I want to request a refund for my order #12345.",
+			"additional_kwargs": {},
+			"response_metadata": {}
+		}
+	},
+	{
+		"type": "ai",
+		"data": {
+			"content": "Your refund request for order #12345 has been initiated. It will be processed in 3-5 business days.",
+			"additional_kwargs": {},
+			"response_metadata": {}
+		}
+	}
+]
