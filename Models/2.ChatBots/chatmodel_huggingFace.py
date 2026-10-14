@@ -5,6 +5,7 @@ load_dotenv()
 
 llm = HuggingFaceEndpoint(
     repo_id = "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    provider = "featherless-ai",
     task = "text-generation",
 )
 model = ChatHuggingFace(llm = llm)
