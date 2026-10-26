@@ -32,6 +32,12 @@ python-dotenv
 # Data validation
 pydantic[email]
 
+# Graph visualization
+grandalf
+
+# PDF generation
+reportlab
+
 # Machine Learning Utilities
 numpy
 scikit-learn
