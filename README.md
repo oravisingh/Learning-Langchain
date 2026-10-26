@@ -7,6 +7,7 @@ This repository is a hands-on learning project focused on LangChain and modern L
 The project is organized around practical LangChain use cases rather than a single app. It demonstrates how to:
 
 - connect to different LLM providers
+- compose sequential, parallel, and conditional chains
 - build prompt-driven chat experiences
 - use local and hosted Hugging Face models
 - generate embeddings and compare document similarity
@@ -17,6 +18,11 @@ The project is organized around practical LangChain use cases rather than a sing
 
 ```text
 Learning-Langchain/
+├── Chains/
+│   ├── conditional_chain.py
+│   ├── middle_east_crisis.txt
+│   ├── parallel_chain.py
+│   └── simple_chain.py
 ├── Models/
 │   ├── 1.LLM/
 │   │   └── demo.py
@@ -36,6 +42,13 @@ Learning-Langchain/
 │   ├── dictOp.py
 │   ├── jsonStructuredOp.py
 │   └── pydanticOp.py
+├── OutputParsers/
+│   ├── demo.py
+│   ├── jsonOutputParser.py
+│   ├── pydanticOutputParser.py
+│   ├── stringOutputParser.py
+│   ├── stringOutputParserdemo.py
+│   └── structuredOutputParser.py
 ├── Prompts/
 │   ├── chat_history.txt
 │   ├── dynamic_prompts_ui.py
@@ -49,6 +62,8 @@ Learning-Langchain/
 │       ├── dynamicChat.py
 │       ├── messagesContextChatbot.py
 │       └── normal_context_chatbot.py
+├── Runnables/
+│   └── demo.py
 ├── .devcontainer/
 │   └── setup.sh
 ├── drf3.1.py
@@ -81,6 +96,14 @@ Learning-Langchain/
 ### Document Similarity
 
 - simple semantic similarity examples using embeddings and vector comparison
+
+### Chains and Runnables
+
+- `Chains/simple_chain.py` demonstrates a prompt-model-parser sequence.
+- `Chains/parallel_chain.py` generates notes and a quiz in parallel, merges the results, and saves the generated text to `Chains/parallel_chain_result.pdf`.
+- `Chains/conditional_chain.py` classifies feedback sentiment and routes it to a matching response chain.
+- `Chains/middle_east_crisis.txt` is the source text used by the parallel-chain example.
+- `Runnables/demo.py` is the starting point for runnable examples.
 
 ## Setup
 
@@ -123,7 +146,12 @@ Examples can be run directly with Python. For example:
 python "Models/1.LLM/demo.py"
 python "Models/2.ChatBots/chatmodel_huggingFace.py"
 python "Output/pydanticOp.py"
+python "Chains/simple_chain.py"
+python "Chains/parallel_chain.py"
+python "Chains/conditional_chain.py"
 ```
+
+The chain examples call OpenRouter and require `OPENROUTER_API_KEY`. Running `Chains/parallel_chain.py` also creates or replaces `Chains/parallel_chain_result.pdf`.
 
 Some prompt and UI demos use Streamlit:
 
@@ -136,15 +164,21 @@ streamlit run "Prompts/using_Ext_prompt.py"
 The project uses LangChain packages, model integrations, environment management, and supporting ML libraries from `requirements.txt`, including:
 
 - `langchain`
+- `langchain-classic`
 - `langchain-core`
 - `langchain-openai`
+- `openai`
 - `langchain-openrouter`
 - `langchain-huggingface`
 - `langchain-google-genai`
+- `google-generativeai`
 - `langchain-anthropic`
 - `streamlit`
 - `python-dotenv`
 - `pydantic[email]`
+- `grandalf`
+- `reportlab`
+- `huggingface-hub`
 - `transformers`
 - `sentence-transformers`
 - `numpy`
