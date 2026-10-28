@@ -50,7 +50,12 @@ branch_chain = RunnableBranch(
 
 final_chain = RunnableSequence(report_gen_chain, branch_chain)
 
+# LCEL: LangChain Expression Language
+# Another shorter way to use RunnableSequence
+# RunnableSequence(report_gen_chain, branch_chain) --> [report_gen_chain | branch_chain]
+
 
 result = final_chain.invoke({"topic": "India"}) # sigle input to both the runnbles
+print(result)
 
 final_chain.get_graph().print_ascii()
