@@ -42,6 +42,6 @@ chain = RunnableSequence(prompt1, model1, parser, RunnableParallel({
                                                                 })
 )
 
-result = chain.invoke({"topic": "Agentic AI"}) # sigle input to both the runnbles
+result = chain.invoke({"topic": "India"}) # sigle input to both the runnbles
 
 print(result)
