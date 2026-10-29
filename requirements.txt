@@ -40,6 +40,9 @@ grandalf
 pypdf
 reportlab
 
+# Web scraping
+beautifulsoup4
+
 # Machine Learning Utilities
 numpy
 scikit-learn
